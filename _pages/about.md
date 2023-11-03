@@ -7,7 +7,7 @@ description: >
 
 profile:
   align: right
-  image: profile_avatar.png
+  image: profile_avatar.jpeg
   address: 
 
 news: false

@@ -119,12 +119,14 @@ video {
 <div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
 
 
-## Dreamland-Video
+<!--research-section-splitter-->
 
-
-<div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin: 0 auto;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 5px; margin: 0 auto;">
   <figure style="display: flex; flex-direction: column; gap: 8px;">
-    <video id="videoPlayer1" style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
+    <figcaption style="text-align: center; font-size: 30px;">
+        Simulator-Conditioned Generation
+    </figcaption>
+    <video id="videoPlayer1" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
       <source src="../assets/img/vid2sim/simulation/sim_nav1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -133,28 +135,29 @@ video {
       <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav2.mp4">●</span>
       <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
     </div>
-    <figcaption style="text-align: center; font-size: 18px;">
-        Simulator-Conditioned Generation
-    </figcaption>
+    
   </figure>
 
   <figure style="display: flex; flex-direction: column; gap: 8px;">
-    <video id="videoPlayer2" style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-      <source src="../assets/img/vid2sim/realworld/realworld_nav1.mp4" type="video/mp4">
+  <figcaption style="text-align: center; font-size: 30px;">
+        Diverse Scene Generation
+    </figcaption>
+    <video id="videoPlayer2" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
+      <source src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="dots" data-player="videoPlayer2">
-      <span class="dot active" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav2.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
+      <span class="dot active" data-src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0">●</span>
+      <span class="dot" data-src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0">●</span>
+      <span class="dot" data-src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0">●</span>
     </div>
-    <figcaption style="text-align: center; font-size: 18px;">
-        Diverse Scene Generation
-    </figcaption>
   </figure>
 
   <figure style="display: flex; flex-direction: column; gap: 8px;">
-    <video id="videoPlayer3" style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
+  <figcaption style="text-align: center; font-size: 30px;">
+        Safety-Critical Scene Generation
+    </figcaption>
+    <video id="videoPlayer3" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
       <source src="../assets/img/vid2sim/realworld/realworld_nav1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -163,9 +166,6 @@ video {
       <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav2.mp4">●</span>
       <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
     </div>
-    <figcaption style="text-align: center; font-size: 18px;">
-        Safety-Critical Scene
-    </figcaption>
   </figure>
 </div>
 
@@ -188,7 +188,9 @@ video {
   });
 </script>
 
+<div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
 
+<!--research-section-splitter-->
   
 ## Dreamland Architecture
 
@@ -201,6 +203,8 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene
 
 <div style="margin-bottom: 15px"></div>
 
+<!--research-section-splitter-->
+
 ## Experiments
 
 <div class="img-container" style="width: 100%; margin: 5px auto;">
@@ -210,6 +214,10 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene
 Dreamland pipeline demonstrate superior quality and controllability, with scalability that benefits from stronger pre-trained model deployed for *Stage-3*.
 
 <div style="margin-bottom: 15px"></div>
+
+
+<!--research-section-splitter-->
+
 
 ## Dreamland Extension
 <div class="img-container" style="width: 100%; margin: 5px auto;">

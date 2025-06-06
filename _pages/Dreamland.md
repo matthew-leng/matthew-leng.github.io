@@ -77,7 +77,7 @@ pdf_link: https://arxiv.org/abs/2501.06693
 }
 
 video {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   height: auto;
   margin: 0 auto;
@@ -207,7 +207,42 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene
 
 ## Experiments
 
-<div class="img-container" style="width: 100%; margin: 5px auto;">
+<figure style="display: flex; flex-direction: column; gap: 8px;">
+  <img id="imageViewer4" src="../assets/img/dreamland/qual1.jpg" 
+       style="display:block; width:100%; height:auto;" alt="Scene Image"/>
+
+  <div class="dots" data-player="imageViewer4">
+    <span class="dot active" data-src="../assets/img/dreamland/qual1.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual2.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual3.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual4.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual5.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual6.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual7.jpg">●</span>
+    <span class="dot" data-src="../assets/img/dreamland/qual8.jpg">●</span>
+  </div>
+  </figure>
+
+<script>
+  document.querySelectorAll('.dots').forEach(dotContainer => {
+    const imageId = dotContainer.getAttribute('data-player');
+    const imageElement = document.getElementById(imageId);
+    const dots = dotContainer.querySelectorAll('.dot');
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const src = dot.getAttribute('data-src');
+        imageElement.src = src;
+
+        dots.forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+      });
+    });
+  });
+</script>
+
+
+<div class="img-container" style="width: 60%; margin: 5px auto;">
     <img src="../assets/img/dreamland/experiments.png" class="my-image" alt="Image" />
 </div>
 

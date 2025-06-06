@@ -26,7 +26,7 @@ pdf_link: https://metadriverse.github.io/dreamland/
 <style>
 .video-container {
   position: relative;
-  max-width: 60%; /* Adjust this value to control the maximum width of the video container */
+  max-width: 80%; /* Adjust this value to control the maximum width of the video container */
    margin: 0 auto 0; /* Optional: center the video container horizontally */
 }
 

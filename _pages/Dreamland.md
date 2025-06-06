@@ -124,7 +124,7 @@ video {
 
 <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin: 0 auto;">
   <figure style="display: flex; flex-direction: column; gap: 8px;">
-    <video id="videoPlayer1" controls>
+    <video id="videoPlayer1" style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
       <source src="../assets/img/vid2sim/simulation/sim_nav1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -134,12 +134,12 @@ video {
       <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
     </div>
     <figcaption style="text-align: center; font-size: 18px;">
-        Safety-Critical Scenes
+        Simulator-Conditioned Generation
     </figcaption>
   </figure>
 
   <figure style="display: flex; flex-direction: column; gap: 8px;">
-    <video id="videoPlayer2" controls>
+    <video id="videoPlayer2" style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
       <source src="../assets/img/vid2sim/realworld/realworld_nav1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -149,7 +149,22 @@ video {
       <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
     </div>
     <figcaption style="text-align: center; font-size: 18px;">
-        High-Level Scenes
+        Diverse Scene Generation
+    </figcaption>
+  </figure>
+
+  <figure style="display: flex; flex-direction: column; gap: 8px;">
+    <video id="videoPlayer3" style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
+      <source src="../assets/img/vid2sim/realworld/realworld_nav1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="dots" data-player="videoPlayer3">
+      <span class="dot active" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
+      <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav2.mp4">●</span>
+      <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
+    </div>
+    <figcaption style="text-align: center; font-size: 18px;">
+        Safety-Critical Scene
     </figcaption>
   </figure>
 </div>
@@ -174,10 +189,7 @@ video {
 </script>
 
 
-
-
   
-
 ## Dreamland Architecture
 
 
@@ -185,150 +197,35 @@ video {
     <img src="../assets/img/dreamland/pipeline.png" class="my-image" alt="Image" />
 </div>
 
-Vid2Sim framework consists of three key stages: (1) **Geometry-consistent reconstruction** for high-quality real-to-sim environment creation, (2) building a **realistic and interactive simulation** with hybrid scene representation and diverse obstacle and scene augmentation for urban navigation training, and (3) zero-shot **sim-to-real deployment** in the real world to verify our pipeline's effectiveness.
+Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene construction with physics-based simulator, (2) *Stage-2 LWA-Sim2Real*: transferring the Sim-LWA from simulation to Real-LWA with an instructional editing model and user instructions, and (3) *Stage-3 Mixed-Condition Generation*: rendering an aesthetic and realistic scene with a large-scale pretrained image or video generation model
 
 <div style="margin-bottom: 15px"></div>
 
-## Interactive Scene Composition
+## Experiments
+
 <div class="img-container" style="width: 100%; margin: 5px auto;">
-    <img src="../assets/img/vid2sim/scene_composition.png" class="my-image" alt="Image" />
+    <img src="../assets/img/dreamland/experiments.png" class="my-image" alt="Image" />
 </div>
 
-Vid2Sim facilitates augmented real-to-sim environment creation through interactive scene composition, including varied **static obstacles** and other **dynamic agents**. This approach enables the generation of **diverse**, **controllable** and **safety-critical** corner cases for safe urban navigation training.
+Dreamland pipeline demonstrate superior quality and controllability, with scalability that benefits from stronger pre-trained model deployed for *Stage-3*.
 
+<div style="margin-bottom: 15px"></div>
 
-<div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
-
-## Real2Sim Navigation Training
-We train and test our agents in diverse realistic real2sim environments with augmented static obstacles and dynamic agents. (Bottom-right is the agent's view)
-<div class="video-grid">
-    <div style="margin-bottom: 15px">
-        <figure>
-            <video style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-                <source src="../assets/img/vid2sim/simulation/sim_nav1.mp4" type="video/mp4">
-            </video>
-            <figcaption style="text-align:center; margin-top:8px; font-size:18px;">
-                Scene 1
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <video style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-                <source src="../assets/img/vid2sim/simulation/sim_nav2.mp4" type="video/mp4">
-            </video>
-            <figcaption style="text-align:center; margin-top:8px; font-size:18px;">
-                Scene 2
-            </figcaption>
-        </figure>
-    </div>
+## Dreamland Extension
+<div class="img-container" style="width: 100%; margin: 5px auto;">
+    <img src="../assets/img/dreamland/extension.png" class="my-image" alt="Image" />
 </div>
 
-<br>
-
-## Zero-shot Sim2Real Deployment
-After training in real2sim environments, we deploy our agents to the real world in a zero-shot manner. This demonstrates the effectiveness of our Vid2Sim pipeline in bridging the sim-to-real gap.  
-
-* *Note: The navigation agent only takes `RGB` image as visual input and deployed in the real world without any fine-tuning*
-<div class="video-grid">
-    <div style="margin-bottom: 15px">
-        <figure>
-            <video style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-                <source src="../assets/img/vid2sim/realworld/realworld_nav1.mp4" type="video/mp4">
-            </video>
-            <figcaption style="text-align:center; margin-top:8px; font-size:18px;">
-                Static & Dynamic Obstacles Avoidance
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <video style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-                <source src="../assets/img/vid2sim/realworld/realworld_nav2.mp4" type="video/mp4">
-            </video>
-            <figcaption style="text-align:center; margin-top:8px; font-size:18px;">
-                Sudden Pedestrian Cut-in
-            </figcaption>
-        </figure>
-    </div>
-</div>
-
-## Real2Sim Digital-Twin 
-We show our Vid2Sim pipeline could generate realistic digital-twin environments for realworld scenes. The digital-twin environment is controllable as well as interactive and can be used for both policy training and evaluation navigation policies. 
-<div class="img-container" style="width: 80%; margin: 5px auto;">
-    <img src="../assets/img/vid2sim/digital-twin.png" class="my-image" alt="Image" />
-</div>
-
-<div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
-
-## Diverse Environment Augmentation
-Vid2Sim can further support controllable scene editing and advanced weather simulation through 3D scene editing and particle system simulation. This enables more robust and generalizable policy training under different lighting and weather conditions.
-
-<div class="video-container">
-  <h4 style="text-align: center; margin-bottom: 0px">Scene Style Augmentation</h4>
-  <video loop autoplay muted playsinline src="../assets/img/vid2sim/editing/augment.m4v"></video>
-</div>
+Dreamland pipeline is generalized to various downstream tasks, including **scene editing**, **safety-critical scene generation**, and **zero-shot generation on urban simulator**.
 
 
-<h4 style="text-align: center; margin-bottom: 20px">Weather Simulation</h4>
-<div class="video-grid">
-    <div style="margin-bottom: 15px">
-        <figure>
-            <video style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-                <source src="../assets/img/vid2sim/editing/rain.mp4" type="video/mp4">
-            </video>
-            <figcaption style="text-align:center; margin-top:8px; font-size:18px;">
-                Rain Simulation
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <video style="display:block; width:80%; height:auto;" muted autoplay loop controls playsinline>
-                <source src="../assets/img/vid2sim/editing/fog.mp4" type="video/mp4">
-            </video>
-            <figcaption style="text-align:center; margin-top:8px; font-size:18px;">
-                Fog Simulation
-            </figcaption>
-        </figure>
-    </div>
-</div>
 
-<div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
-
-## Vid2Sim Dataset
-
-We curate a dataset of 30 diverse real-to-sim (real2sim) environments from web sourced videos for urban navigation training. We further evaluate the generalizability improvement of our agents as the number of the training environment increase.
-
-<h4 style="text-align: center; margin-bottom: 15px">Environments Gallery</h4>
-<div class="video-container">
-  <video loop autoplay muted playsinline src="../assets/img/vid2sim/gallery.mp4"></video>
-</div>
-
-<br>
-
-<h4 style="text-align: center; margin-bottom: 15px">Generalizability Results</h4>
-<div class="img-container" style="width: 80%; margin: 0 auto;">
-    <img src="../assets/img/vid2sim/generalize.png" class="my-image" alt="Image" />
-</div>
-
-This table compares (a) the success rate (SR) and (b) success rate weighted by path length (SPL) across varying numbers of training environments. Increasing the number of training environments leads to a higher test success rate and SPL, which indicates improved agents generalizability.
-
-<br>
-
-<div style="border-top: 1px solid #ccc; margin: 18px 0;"></div>
-
-<h3 style="text-align: center">Reference</h3>
-
-<pre><code class="language-plain">@article{xie2024vid2sim,
+<!-- <pre><code class="language-plain">@article{xie2024vid2sim,
   title={Vid2Sim: Realistic and Interactive Simulation from Video for Urban Navigation},
   author={Ziyang Xie and Zhizheng Liu and Zhenghao Peng and Wayne Wu and Bolei Zhou},
   journal={Preprint},
   year={2024}
 }
-</code></pre>
+</code></pre> -->
 
 
-
-<h3 style="margin-top: 30px">Acknowledgement</h3>
-*We thank <a href="https://www.cocodelivery.com/">COCO Robotics</a> for donating mobile hardware for our real-world experiment.*

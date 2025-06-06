@@ -5,21 +5,22 @@ title: "Dreamland: Controllable World Creation with Simulator and Generative Mod
 page_title: "Dreamland: Controllable World Creation with Simulator and Generative Models"
 authors:
 
-- {name: "Sicheng Mo<sup>*</sup>", url: "https://ziyangxie.site/"}
-- {name: "Ziyang Leng<sup>*</sup>", url: "#"}
-- {name: "Leon Liu", url: "https://pengzhenghao.github.io"}
-- {name: "Weizhen Wang", url: "https://wywu.github.io/"}
-- {name: "Honglin He", url: "https://wywu.github.io/"}
+- {name: "Sicheng Mo<sup>*</sup>", url: "https://sichengmo.github.io/"}
+- {name: "Ziyang Leng<sup>*</sup>", url: "https://matthew-leng.github.io/"}
+- {name: "Leon Liu", url: "#"}
+- {name: "Weizhen Wang", url: "#"}
+- {name: "Honglin He", url: "https://scholar.google.com/citations?user=Y0Qrwg0AAAAJ&hl"}
 - {name: "Bolei Zhou", url: "https://boleizhou.github.io/"}
 
 institutions:
 
 - {name: "University of California, Los Angeles"}
+- {name: "<sup>*</sup> Equal Contribution"}
 
 nav: false
 nav_order: 1
-code_link: https://github.com/Vid2Sim/Vid2Sim
-pdf_link: https://arxiv.org/abs/2501.06693
+code_link: https://metadriverse.github.io/dreamland/
+pdf_link: https://metadriverse.github.io/dreamland/
 
 ---
 
@@ -28,11 +29,11 @@ pdf_link: https://arxiv.org/abs/2501.06693
 <style>
 .video-container {
   position: relative;
-  max-width: 100%; /* Adjust this value to control the maximum width of the video container */
+  max-width: 60%; /* Adjust this value to control the maximum width of the video container */
 }
 
 .teaser {
-  margin: -18px auto -18px; /* Optional: center the video container horizontally */
+  margin: 0 auto; /* Optional: center the video container horizontally */
 }
 
 .video-container video {
@@ -78,7 +79,7 @@ pdf_link: https://arxiv.org/abs/2501.06693
 
 video {
   width: 100%;
-  max-width: 600px;
+  /* max-width: 1000px; */
   height: auto;
   margin: 0 auto;
 }
@@ -106,22 +107,21 @@ video {
 </div>
 
 
-
 <!--research-section-splitter-->
 
 
 ## TL; DR
 
-:selfie: **Dreamland** is a hybird generation pipeline that connects simulators and generative models to achieve controllable and configurable world creation.
+:city_sunset: **Dreamland** is a hybird generation pipeline that connects simulators and generative models to achieve controllable and configurable world creation.
 
 :robot: **Dreamland** demonstrates superior quality and controllability in scene generation, and improves the adaptation of embodied agents to the real world.
 
-<div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
+<!-- <div style="border-top: 1px solid #ccc; margin: 30px 0;"></div> -->
 
 
 <!--research-section-splitter-->
 
-<div style="display: grid; grid-template-columns: 1fr; gap: 5px; margin: 0 auto;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 0px; margin: 0 auto;">
   <figure style="display: flex; flex-direction: column; gap: 8px;">
     <figcaption style="text-align: center; font-size: 30px;">
         Simulator-Conditioned Generation
@@ -135,24 +135,21 @@ video {
       <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav2.mp4">●</span>
       <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
     </div>
-    
   </figure>
-
   <figure style="display: flex; flex-direction: column; gap: 8px;">
   <figcaption style="text-align: center; font-size: 30px;">
         Diverse Scene Generation
     </figcaption>
     <video id="videoPlayer2" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
-      <source src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0" type="video/mp4">
+      <source src="../assets/img/vid2sim/simulation/sim_nav1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="dots" data-player="videoPlayer2">
-      <span class="dot active" data-src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0">●</span>
-      <span class="dot" data-src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0">●</span>
-      <span class="dot" data-src="https://www.youtube.com/embed/vHuAzNxmfKc?autoplay=1&mute=1&loop=1&playlist=vHuAzNxmfKc&controls=1&rel=0&showinfo=0">●</span>
+      <span class="dot active" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
+      <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav2.mp4">●</span>
+      <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
     </div>
   </figure>
-
   <figure style="display: flex; flex-direction: column; gap: 8px;">
   <figcaption style="text-align: center; font-size: 30px;">
         Safety-Critical Scene Generation
@@ -188,7 +185,7 @@ video {
   });
 </script>
 
-<div style="border-top: 1px solid #ccc; margin: 30px 0;"></div>
+<!-- <div style="border-top: 1px solid #ccc; margin: 30px 0;"></div> -->
 
 <!--research-section-splitter-->
   
@@ -201,7 +198,7 @@ video {
 
 Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene construction with physics-based simulator, (2) *Stage-2 LWA-Sim2Real*: transferring the Sim-LWA from simulation to Real-LWA with an instructional editing model and user instructions, and (3) *Stage-3 Mixed-Condition Generation*: rendering an aesthetic and realistic scene with a large-scale pretrained image or video generation model
 
-<div style="margin-bottom: 15px"></div>
+<!-- <div style="margin-bottom: 15px"></div> -->
 
 <!--research-section-splitter-->
 
@@ -216,10 +213,6 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene
     <span class="dot" data-src="../assets/img/dreamland/qual2.jpg">●</span>
     <span class="dot" data-src="../assets/img/dreamland/qual3.jpg">●</span>
     <span class="dot" data-src="../assets/img/dreamland/qual4.jpg">●</span>
-    <span class="dot" data-src="../assets/img/dreamland/qual5.jpg">●</span>
-    <span class="dot" data-src="../assets/img/dreamland/qual6.jpg">●</span>
-    <span class="dot" data-src="../assets/img/dreamland/qual7.jpg">●</span>
-    <span class="dot" data-src="../assets/img/dreamland/qual8.jpg">●</span>
   </div>
   </figure>
 
@@ -246,20 +239,20 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene
     <img src="../assets/img/dreamland/experiments.png" class="my-image" alt="Image" />
 </div>
 
-Dreamland pipeline demonstrate superior quality and controllability, with scalability that benefits from stronger pre-trained model deployed for *Stage-3*.
+Dreamland pipeline demonstrate superior **quality** and **controllability**, with **scalability** that benefits from stronger pre-trained model deployed for *Stage-3*.
 
-<div style="margin-bottom: 15px"></div>
+<!-- <div style="margin-bottom: 15px"></div> -->
 
 
 <!--research-section-splitter-->
 
 
-## Dreamland Extension
-<div class="img-container" style="width: 100%; margin: 5px auto;">
-    <img src="../assets/img/dreamland/extension.png" class="my-image" alt="Image" />
+## Scene Editing
+<div class="img-container" style="width: 70%; margin: 5px auto;">
+    <img src="../assets/img/dreamland/editing.png" class="my-image" alt="Image" />
 </div>
 
-Dreamland pipeline is generalized to various downstream tasks, including **scene editing**, **safety-critical scene generation**, and **zero-shot generation on urban simulator**.
+Dreamland supports a new application that edits a generated scene by adjusting the corresponding source scene.
 
 
 

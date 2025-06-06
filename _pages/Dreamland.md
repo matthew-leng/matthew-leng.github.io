@@ -14,7 +14,7 @@ authors:
 
 institutions:
 
-- {name: "<p>University of California, Los Angeles</p><br><p><sup>*</sup> Equal Contribution</p>"}
+- {name: "<p>University of California, Los Angeles</p><sup>*</sup> Equal Contribution"}
 
 nav: false
 nav_order: 1
@@ -23,12 +23,11 @@ pdf_link: https://metadriverse.github.io/dreamland/
 
 ---
 
-<p style="text-align: center;"><sup>*</sup> Equal Contribution</p>
-
 <style>
 .video-container {
   position: relative;
   max-width: 60%; /* Adjust this value to control the maximum width of the video container */
+   margin: 0 auto 0; /* Optional: center the video container horizontally */
 }
 
 .teaser {
@@ -101,7 +100,7 @@ video {
 
 </style>
 
-<div class="video-container teaser">
+<div class="video-container">
   <video loop autoplay muted playsinline src="../assets/img/dreamland/web_teaser.mp4"></video>
 </div>
 

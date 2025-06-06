@@ -14,7 +14,7 @@ authors:
 
 institutions:
 
-- {name: "University of California, Los Angeles"}
+- {name: "<p>University of California, Los Angeles</p><br><p><sup>*</sup> Equal Contribution</p>"}
 
 nav: false
 nav_order: 1
@@ -102,7 +102,7 @@ video {
 </style>
 
 <div class="video-container teaser">
-  <video loop autoplay muted playsinline src="../assets/img/vid2sim/simulation/sim_nav1.mp4"></video>
+  <video loop autoplay muted playsinline src="../assets/img/dreamland/web_teaser.mp4"></video>
 </div>
 
 
@@ -111,9 +111,9 @@ video {
 
 ## TL; DR
 
-:city_sunset: **Dreamland** is a hybird generation pipeline that connects simulators and generative models to achieve controllable and configurable world creation.
+:national_park: **Dreamland** is a hybird generation pipeline that connects simulators and generative models to achieve controllable and configurable world creation.
 
-:robot: **Dreamland** demonstrates superior quality and controllability in scene generation, and improves the adaptation of embodied agents to the real world.
+:robot: **Dreamland** demonstrates great quality and controllability in scene generation, and improves the adaptation of embodied agents to the real world.
 
 <!-- <div style="border-top: 1px solid #ccc; margin: 30px 0;"></div> -->
 
@@ -126,13 +126,12 @@ video {
         Simulator-Conditioned Generation
     </figcaption>
     <video id="videoPlayer1" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
-      <source src="../assets/img/vid2sim/simulation/sim_nav1.mp4" type="video/mp4">
+      <source src="../assets/img/dreamland/control_sample_1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="dots" data-player="videoPlayer1">
-      <span class="dot active" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav2.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
+      <span class="dot active" data-src="../assets/img/dreamland/control_sample_1.mp4">●</span>
+      <span class="dot" data-src="../assets/img/dreamland/control_sample_2.mp4">●</span>
     </div>
   </figure>
   <figure style="display: flex; flex-direction: column; gap: 8px;">
@@ -140,13 +139,13 @@ video {
         Diverse Scene Generation
     </figcaption>
     <video id="videoPlayer2" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
-      <source src="../assets/img/vid2sim/simulation/sim_nav1.mp4" type="video/mp4">
+      <source src="../assets/img/dreamland/text_sample_1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="dots" data-player="videoPlayer2">
-      <span class="dot active" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav2.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/simulation/sim_nav1.mp4">●</span>
+      <span class="dot active" data-src="../assets/img/dreamland/text_sample_1.mp4">●</span>
+      <span class="dot" data-src="../assets/img/dreamland/text_sample_2.mp4">●</span>
+      <span class="dot" data-src="../assets/img/dreamland/text_sample_3.mp4">●</span>
     </div>
   </figure>
   <figure style="display: flex; flex-direction: column; gap: 8px;">
@@ -154,13 +153,12 @@ video {
         Safety-Critical Scene Generation
     </figcaption>
     <video id="videoPlayer3" style="display:block; width:100%; height:auto;" muted autoplay loop controls playsinline>
-      <source src="../assets/img/vid2sim/realworld/realworld_nav1.mp4" type="video/mp4">
+      <source src="../assets/img/dreamland/safe_sample_1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="dots" data-player="videoPlayer3">
-      <span class="dot active" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav2.mp4">●</span>
-      <span class="dot" data-src="../assets/img/vid2sim/realworld/realworld_nav1.mp4">●</span>
+      <span class="dot active" data-src="../assets/img/dreamland/safe_sample_1.mp4">●</span>
+      <span class="dot" data-src="../assets/img/dreamland/safe_sample_2.mp4">●</span>
     </div>
   </figure>
 </div>
@@ -238,7 +236,7 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation* : scen
     <img src="../assets/img/dreamland/experiments.png" class="my-image" alt="Image" />
 </div>
 
-Dreamland demonstrates superior **quality** and **controllability**, with **scalability** that benefits from stronger pre-trained model deployed for *Stage-3*.
+Dreamland demonstrates great **quality** and **controllability**, with **scalability** that benefits from stronger pre-trained model deployed for *Stage-3*.
 
 <!-- <div style="margin-bottom: 15px"></div> -->
 
@@ -247,7 +245,7 @@ Dreamland demonstrates superior **quality** and **controllability**, with **scal
 
 
 ## Scene Editing
-<div class="img-container" style="width: 70%; margin: 5px auto;">
+<div class="img-container" style="width: 90%; margin: 5px auto;">
     <img src="../assets/img/dreamland/editing.jpg" class="my-image" alt="Image" />
 </div>
 

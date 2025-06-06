@@ -15,7 +15,6 @@ authors:
 institutions:
 
 - {name: "University of California, Los Angeles"}
-- {name: "<sup>*</sup> Equal Contribution"}
 
 nav: false
 nav_order: 1
@@ -24,7 +23,7 @@ pdf_link: https://metadriverse.github.io/dreamland/
 
 ---
 
-
+<p style="text-align: center;"><sup>*</sup> Equal Contribution</p>
 
 <style>
 .video-container {
@@ -196,7 +195,7 @@ video {
     <img src="../assets/img/dreamland/pipeline.png" class="my-image" alt="Image" />
 </div>
 
-Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene construction with physics-based simulator, (2) *Stage-2 LWA-Sim2Real*: transferring the Sim-LWA from simulation to Real-LWA with an instructional editing model and user instructions, and (3) *Stage-3 Mixed-Condition Generation*: rendering an aesthetic and realistic scene with a large-scale pretrained image or video generation model
+Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation* : scene construction with physics-based simulator, (2) *Stage-2 LWA-Sim2Real* : transferring the Sim-LWA from simulation to Real-LWA with an instructional editing model and user instructions, (3) *Stage-3 Mixed-Condition Generation* : rendering an aesthetic and realistic scene with a large-scale pretrained image or video generation model
 
 <!-- <div style="margin-bottom: 15px"></div> -->
 
@@ -239,7 +238,7 @@ Dreamland pipeline consists of three key stages: (1) *Stage-1 Simulation*: scene
     <img src="../assets/img/dreamland/experiments.png" class="my-image" alt="Image" />
 </div>
 
-Dreamland pipeline demonstrate superior **quality** and **controllability**, with **scalability** that benefits from stronger pre-trained model deployed for *Stage-3*.
+Dreamland demonstrates superior **quality** and **controllability**, with **scalability** that benefits from stronger pre-trained model deployed for *Stage-3*.
 
 <!-- <div style="margin-bottom: 15px"></div> -->
 
@@ -249,10 +248,10 @@ Dreamland pipeline demonstrate superior **quality** and **controllability**, wit
 
 ## Scene Editing
 <div class="img-container" style="width: 70%; margin: 5px auto;">
-    <img src="../assets/img/dreamland/editing.png" class="my-image" alt="Image" />
+    <img src="../assets/img/dreamland/editing.jpg" class="my-image" alt="Image" />
 </div>
 
-Dreamland supports a new application that edits a generated scene by adjusting the corresponding source scene.
+Dreamland supports editing a generated scene by adjusting the corresponding source scene.
 
 
 
